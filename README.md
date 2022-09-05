@@ -37,3 +37,17 @@ const MemoComp = React.memo(Comp)
 // rerender it again with the same props as at first:
 <MemoComp prop1="a" prop2="b" /> // renders new elements
 ```
+
+## Hints
+
+### Use React memo like this to solve the rerendering issue:
+
+#### React memo says, only allow me to rerender if my incoming props are changing.
+
+```
+in the ChildCounter , Navbar components
+
+import React, {memo} from 'react';
+
+export default memo(ComponentName)
+```
