@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Memo from './pages/Memo'
 import UseCallback from './pages/UseCallback';
+import UseMemo from './pages/UseMemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="memo"  element={<Memo />} />
         <Route path="usecallback"  element={<UseCallback />} />
+        <Route path="usememo"  element={<UseMemo />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

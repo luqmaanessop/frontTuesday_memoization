@@ -9,10 +9,13 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/memo">React.memo</Link>
+          <Link to="/memo">React.memo Demo</Link>
         </li>
         <li>
-          <Link to="/usecallback">useCallback</Link>
+          <Link to="/usecallback">useCallback Demo</Link>
+        </li>
+        <li>
+          <Link to="/usememo">useMemo Demo</Link>
         </li>
       </ul>
     </nav>
