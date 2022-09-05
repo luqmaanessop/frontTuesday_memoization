@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Memo from './pages/Memo'
+import UseCallback from './pages/UseCallback';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="memo"  element={<Memo />} />
+        <Route path="usecallback"  element={<UseCallback />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

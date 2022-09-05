@@ -11,6 +11,9 @@ function Navbar() {
         <li>
           <Link to="/memo">React.memo</Link>
         </li>
+        <li>
+          <Link to="/usecallback">useCallback</Link>
+        </li>
       </ul>
     </nav>
   );

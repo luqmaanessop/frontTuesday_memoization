@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 
-const Child = (props) => {
+const ChildCounter = (props) => {
   function changeNumber() {
     props.changeNumber(Math.random());
   }
@@ -13,4 +13,4 @@ const Child = (props) => {
   )
 }
 
-export default memo(Child);
+export default memo(ChildCounter);

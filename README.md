@@ -10,7 +10,8 @@ function addTwo(input) {
   if (input !== prevInput) {
     prevResult = input + 2
   }
-  prevInput = input return prevResult
+  prevInput = input;
+  return prevResult;
 }
 ```
 
@@ -38,11 +39,11 @@ const MemoComp = React.memo(Comp)
 <MemoComp prop1="a" prop2="b" /> // renders new elements
 ```
 
-## Hints
+## Hints:
 
-### Use React memo like this to solve the rerendering issue:
+### React memo is used like this to solve the rerendering issue:
 
-#### React memo says, only allow me to rerender if my incoming props are changing.
+#### React memo says, only allow me to rerender if my incoming props are changing based on referential equality, every time we go through a render cylce we end up creating a brand new object with new functions if declared inside
 
 ```
 in the ChildCounter , Navbar components
@@ -51,3 +52,12 @@ import React, {memo} from 'react';
 
 export default memo(ComponentName)
 ```
+
+### useCallback accepts 2 arguments and returns a new function
+
+```
+arg 1: the actual function you want to memoize
+arg 2: dependency array - specify when this should actually refresh/update itself
+```
+
+#### Throughout the lifecycle of this component - the memoized function will point to the same memory address and be true for referential equality
