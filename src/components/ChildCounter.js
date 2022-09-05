@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 
 const Child = (props) => {
   function changeNumber() {
-    props.number = (Math.random());
+    props.changeNumber(Math.random());
   }
 
   return (
