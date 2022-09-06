@@ -10,7 +10,7 @@ export default function UseMemo() {
   const [arr, setArr] = useState([1,2,3,4,5,6,7,8,9,10])
 
   const memoizedCallback = useCallback(number => changeChildNumber(number), [])
-  // 💰 Uncomment out the memoizedLargestValue and use it instead of the largestUnmemoizedValue
+  // 💰 Uncomment out the memoizedLargestValue and use it instead of the largestUnmemoizedValue, Dont forget to comment out largestUnmemoizedValue from before else it wont work
   // const memoizedLargestValue = useMemo(() => getLargestNumber(), [arr])
   const largestUnmemoizedValue = getLargestNumber();
 
@@ -25,12 +25,15 @@ export default function UseMemo() {
 
   // This is super expensive, maybe its a fetch request
   function getLargestNumber() {
-    console.log("Calculating largest number - this is so expensive");
+    console.warn("Calculating largest number - this is so expensive, aargh my resources!");
     return Math.max(...arr);
   }
 
   function changeArray() {
     setArr([60,70,80,90])
+  }
+  function resetArray() {
+    setArr([1,2,3,4,5,6,7,8,9,10])
   }
 
   return (
@@ -40,7 +43,8 @@ export default function UseMemo() {
     <button onClick={incrememntLocal}>Click to increment local</button>
     <h1>Local Counter: {localNumber}</h1>
     <h2>Largest number of Array: {largestUnmemoizedValue}</h2>
-    <button onClick={changeArray}>Change array</button>
+    <button onClick={changeArray}>Swap array</button>
+    <button onClick={resetArray}>Reset array to default</button>
     </>
   )
 }

@@ -53,7 +53,7 @@ import React, {memo} from 'react';
 export default memo(ComponentName)
 ```
 
-### useCallback accepts 2 arguments and returns a new function
+### useCallback - used when wanting to make a function stable that is being passed as a prop accepts 2 arguments and returns a new function
 
 ```
 arg 1: the actual function you want to memoize
@@ -61,3 +61,7 @@ arg 2: dependency array - specify when this should actually refresh/update itsel
 ```
 
 #### Throughout the lifecycle of this component - the memoized function will point to the same memory address and be true for referential equality
+
+### useMemo - used to memoize expensive functions in general that lives in the current component
+
+Notice the cache value of one here by switching the array (notice the workings) then reset array and notice the workings again.
