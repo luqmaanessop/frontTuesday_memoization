@@ -30,7 +30,9 @@ export default function UseMemo() {
   }
 
   function changeArray() {
-    setArr([60,70,80,90])
+    const min = 1;
+    const max = 1000;
+    setArr(Array.apply(null, Array(10)).map(function () { return Math.floor(Math.random() * (max - min + 1)) + min;}))
   }
   function resetArray() {
     setArr([1,2,3,4,5,6,7,8,9,10])
@@ -46,7 +48,6 @@ export default function UseMemo() {
     );
   }
 
-
   return (
     <>
     <Navbar />
@@ -55,7 +56,7 @@ export default function UseMemo() {
     <button class="ml-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={incrememntLocal}>Click to increment local</button>
     <h2 class="mt-8 ml-6 text-xl">Largest number of Array: {largestUnmemoizedValue}</h2>
     <ArrayOutput />
-    <button class="ml-6 mt-4 mr-6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={changeArray}>Swap array</button>
+    <button class="ml-6 mt-4 mr-6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={changeArray}>Generate random array</button>
     <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" onClick={resetArray}>Reset array to default</button>
     </>
   )
